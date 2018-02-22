@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  wordpress:
+    image: visiblevc/wordpress:latest
+    ports:
+      - 8080:80
+      - 443:443
+    volumes:
+      - ./wp/tweaks.ini:/usr/local/etc/php/conf.d/tweaks.ini
+      - ./wp/docker-wp-boilerplate:/app/wp-content/themes/docker-wp-boilerplate
+      - ./wp/plugins/:/app/wp-content/plugins
+      - ./wp/uploads/:/app/wp-content/uploads
+    environment:
+      DB_HOST: db
+      DB_NAME: docker-wp-boilerplate
+      DB_PASS: root
+      DB_PREFIX: wp_
+      PLUGINS: >-
+        [local]advanced-custom-fields-pro,
+        [local]acf-theme-code-pro,
+        [local]wp-migrate-db-pro
+      THEMES: >-
+        [local]rochefort
+      SEARCH_REPLACE:
+        yoursite.com,
+        localhost:8080
+      WP_DEBUG: 'true'
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 22222:80

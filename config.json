@@ -1,0 +1,8 @@
+{
+  "theme_name": "docker-wp-boilerplate",
+  "sftp_host": "",
+  "sftp_user": "",
+  "sftp_pass": "",
+  "sftp_staging_server_directory": "",
+  "sftp_production_server_directory": ""
+}

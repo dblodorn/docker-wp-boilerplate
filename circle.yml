@@ -1,0 +1,22 @@
+machine:
+  timezone: America/Los_Angeles
+  node:
+    version: 6.11.0
+
+dependencies:
+  override:
+    - yarn install
+
+test:
+  override:
+    - npm test
+
+deployment:
+  development:
+    branch: stage
+    commands:
+      - yarn deploy-staging
+  production:
+    branch: master
+    commands:
+      - yarn deploy-production

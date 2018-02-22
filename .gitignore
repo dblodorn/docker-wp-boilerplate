@@ -1,0 +1,5 @@
+node_modules
+src/.sass-cache
+src/_temp
+wp/docker-wp-boilerplate/assets/js
+wp/docker-wp-boilerplate/assets/css
