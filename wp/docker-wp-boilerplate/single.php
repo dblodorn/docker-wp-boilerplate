@@ -1,4 +1,4 @@
-<?php /* The template for displaying all pages */ get_header(); ?>
+<?php /* The template for displaying all single posts */ get_header(); ?>
 
 <?php if ( have_posts() ) {
   while ( have_posts() ) {

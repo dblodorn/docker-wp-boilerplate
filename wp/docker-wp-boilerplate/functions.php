@@ -168,3 +168,14 @@ class CSS_Menu_Walker extends Walker {
 /* POST ORDER
 /*-----------------------------------------------------------------------------------*/
 
+
+
+/*-----------------------------------------------------------------------------------*/
+/* SHORTEN EXCERPT LENGTH
+/*-----------------------------------------------------------------------------------*/
+
+function custom_excerpt_length( $length ) {
+	return 25;
+}
+
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
