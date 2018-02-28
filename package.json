@@ -14,9 +14,6 @@
       "eslintify"
     ]
   },
-  "browserify-shim": {
-    "jquery-slim": "global:$"
-  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
