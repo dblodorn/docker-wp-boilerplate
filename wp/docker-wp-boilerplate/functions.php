@@ -26,7 +26,7 @@ function my_remove_menu_pages() {
 }
 
 function my_theme_setup() {
-  require_once( 'functions/custom-post-type.php' );
+  require_once( 'functions/custom-post-types.php' );
   require_once( 'functions/custom-taxonomies.php' );
   add_theme_support( 'post-thumbnails' );
 }

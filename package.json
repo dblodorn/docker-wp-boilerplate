@@ -9,7 +9,6 @@
   "private": true,
   "browserify": {
     "transform": [
-      "browserify-shim",
       "babelify",
       "eslintify"
     ]
