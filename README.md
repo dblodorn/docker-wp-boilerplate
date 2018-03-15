@@ -24,7 +24,7 @@ To access Local Site: http://localhost:8080/
 
 To access PHPMYADMIN: http://localhost:22222
 
-The super awesome docker compose file / docker image by: [https://github.com/visiblevc/wordpress-starter](visiblevc)
+The super awesome docker compose file / docker image by: [visiblevc](https://github.com/visiblevc/wordpress-starter)
 
 ## Development & Deployment Commands.
 
