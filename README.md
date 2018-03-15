@@ -1,6 +1,6 @@
 # Docker Wp Boilerplate
 
-Give your next straight up Wordpress project a jump start.
+Give your next Wordpress project a jump start.
 
 ## TO GET GOING
 
@@ -23,6 +23,8 @@ Download and install Docker: [https://www.docker.com/get-docker](https://www.doc
 To access Local Site: http://localhost:8080/
 
 To access PHPMYADMIN: http://localhost:22222
+
+The super awesome docker compose file / docker image by: [https://github.com/visiblevc/wordpress-starter](visiblevc)
 
 ## Development & Deployment Commands.
 
