@@ -1,10 +1,29 @@
+// BREAKPOINTS
+$mobile: 500px
+$mobile-nav: 768px
+$medium: 700px
+$large: 1280px
+$xl: 1600px
+
 // BREAKPOINT MIXINS
+=mobile
+	@media (max-width: #{$mobile})
+		@content
+
+=mobile-nav
+	@media (max-width: #{$mobile-nav})
+		@content
+
 =medium
-	@media (max-width: #{$breakpoint-medium})
+	@media (max-width: #{$medium})
 		@content
 
 =large
-	@media (max-width: #{$breakpoint-large})
+	@media (max-width: #{$large})
+		@content
+
+=xl
+	@media (min-width: #{$xl})
 		@content
 
 // CUSTOM WIDTH - as Argument

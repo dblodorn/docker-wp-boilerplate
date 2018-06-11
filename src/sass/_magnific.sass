@@ -1,0 +1,224 @@
+//-------------------------------------------------------------------
+//  Magnific Popup CSS
+//-------------------------------------------------------------------
+$slide-height-desktop: calc(90vh - 6.5rem)
+$slide-width-desktop: 90vw
+$slide-width-mobile: 100vw
+$slide-height-mobile: calc(100vh - 16rem)
+
+
+.close-button
+  +button-init
+  +bg-contain
+  background-image: url('./../images/close.svg')
+  -webkit-appearance: none!important
+  display: block
+  position: fixed
+  cursor: pointer
+  transition: opacity 350ms ease
+  font-size: 0
+  z-index: 30000
+  cursor: pointer
+  border: 0
+  width: 5rem
+  height: 5rem
+  top: 2.25rem
+  right: 2.25rem
+  opacity: .5
+  &:hover
+    opacity: 1
+  +mobile
+    width: 3.5rem
+    height: 3.5rem
+    top: 1.6rem
+    right: 1.7rem
+
+// PLUGIN STYLING
+.mfp-bg
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: $header-z * 2
+  overflow: hidden
+  position: fixed
+  background-color: $white
+
+.mfp-bg-img
+  width: $slide-width-desktop
+  height: $slide-height-desktop
+  background:
+    size: contain
+    position: center
+    repeat: no-repeat
+  z-index: $header-z + 10
+  +mobile-nav
+    width: $slide-width-mobile
+    height: $slide-height-mobile
+    position: absolute
+    top: 0
+    left: 0
+
+.mfp-img
+  display: none
+
+.mfp-wrap
+  +fade-in
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  margin: auto
+  max-width: $mega-max-width
+  width: $slide-width-desktop
+  height: $slide-height-desktop!important
+  z-index: $header-z * 4
+  position: fixed
+  outline: none !important
+  backface-visibility: hidden
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow-x: visible!important
+  overflow-y: visible!important
+  +mobile-nav
+    width: $slide-width-mobile
+    height: $slide-height-mobile!important
+    margin: 0 auto
+    top: 6.5rem
+
+.mfp-container
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+.mfp-figure
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  left: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  figcaption
+    +FontDisplay
+    position: fixed
+    bottom: 1.75rem
+    right: 1.75rem
+    flex-grow: 0
+    color: $grey
+    text-transform: uppercase
+    font-size: $h5-size
+    text-decoration: none
+    pointer-events: none
+  figure
+    width: 100%
+    height: 100%
+    position: relative
+    display: block
+    margin: 0
+    z-index: 100
+    img
+      +absolute-center
+      +fade-in
+      object-fit: contain
+      width: 100%
+      height: 100%
+      opacity: 1
+      transition: opacity 750ms ease 150ms
+
+.mfp-content
+  position: relative
+  margin: 0 auto
+  width: 100%
+  height: 100%
+  transition: opacity 500ms ease 250ms
+  z-index: $header-z * 2 + 500
+
+// CLOSE
+.mfp-close
+  @extend .close-button
+
+.mfp-close:hover,
+.mfp-close:focus
+  opacity: .75
+  filter: alpha(opacity = 75)
+
+// ARROWS
+.mfp-arrow
+  +button-init
+  width: 50%
+  height: 100%
+  position: absolute
+  top: 0
+  z-index: 9000
+  opacity: 0
+  transition: opacity 350ms ease
+  display: flex
+  align-items: center
+  &-left,
+  &-right
+    &:hover
+      opacity: 1!important
+    &:after
+      background:
+        size: cover
+        repeat: no-repeat
+        position: center
+      content: ''
+      flex-grow: 0
+      width: 6rem
+      height: 6rem
+      opacity: 0
+  &-left
+    justify-content: flex-start
+    left: 0
+    &:after
+      background-image: url('../images/back.svg')
+      margin-left: -6rem
+  &-right
+    justify-content: flex-end
+    right: 0
+    &:after
+      background-image: url('../images/forward.svg')
+      margin-right: -6rem
+
+// LOADER
+.mfp-preloader
+  +absolute-center
+  z-index: 9000
+  width: 3.5rem
+  height: 3.5rem
+  opacity: .35
+  pointer-events: none
+  transition: opacity 250ms ease
+  display: flex
+  align-items: center
+  justify-content: center
+
+.mfp-s-loading
+  .mfp-content
+    opacity: 0
+
+.mfp-s-ready
+  .mfp-preloader
+    opacity: 0!important
+  .mfp-content
+    +fade-in
+
+//-------------------------------------------------------------------
+// Simple fade transition
+//-------------------------------------------------------------------
+
+.mfp-fade.mfp-bg
+  transition: all 350ms ease
+  opacity: 0
+
+.mfp-fade.mfp-bg.mfp-ready
+  opacity: 1
+
+.mfp-fade.mfp-bg.mfp-removing
+  opacity: 0

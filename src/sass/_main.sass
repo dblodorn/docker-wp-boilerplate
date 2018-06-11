@@ -8,22 +8,41 @@ body
   overflow-x: hidden
   width: 100vw
   margin: 0
-  font-family: $default-sans
   line-height: $doc-line-height
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+  font-family: Arial, Helvetica, sans-serif
   *
     box-sizing: border-box
     outline: 0
+  &.no-scroll
+    overflow: hidden
+    height: 100%
 
 main
   +flex-column
+  +fade-in
   width: 100%
+  min-height: calc(100vh -  #{$header-height})
   position: relative
   z-index: 10
 
+section
+  width: 100%
+  margin: $header-height + 2rem auto
+  max-width: $max-width
+  &.portfolio
+    max-width: 120rem
+  &.about
+    max-width: 80rem
+  +large
+    margin: $header-height auto
+  +mobile-nav
+    margin: $header-height auto 6rem
+
 // Defaults
-ul
+ul,
+ol
   list-style: none
 
 // CLEAR DEFAULT MARGINS & PADS
@@ -34,3 +53,13 @@ ul,h1,h2,h3,h4,h5,p,li
 img
   width: 100%
   height: auto
+
+button:focus
+  outline: 0!important
+  background-color: $transparent!important
+
+a
+  +hover-underline
+  color: $black
+  text-decoration: none
+  -webkit-tap-highlight-color: transparent

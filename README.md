@@ -1,6 +1,25 @@
 # Docker Wp Boilerplate
 
-Give your next Wordpress project a jump start.
+A Wordpress Skeleton with a collection of basic patterns / defaults to aid in building out sites for portfolio / art / photography / gallery applications.
+
+Plugin Dependencies:
++ Advanced Custom Fields Pro
+
+Plugin Suggestions - Need License:
++ Advanced Custom Fields: Theme Code Pro
+    Generates theme code for ACF Pro field groups to speed up development. A real time saver when building out additional featutres.
++	Enhanced Media Library PRO
+    This plugin will be handy for those who need to manage a lot of media files.
++ WP Migrate DB Pro
+    Export, push, and pull to migrate your WordPress databases. Kinda essential for pushing between local, staging, production.
+
+Plugin Suggestions - Free (DONATE!):
++ Enable Media Replace
+    Enable replacing media files by uploading a new file in the "Edit Media" section of the WordPress Media Library.
++ Intuitive Custom Post Order
+    Intuitively, Order Items( Posts, Pages, ,Custom Post Types, Custom Taxonomies, Sites ) using a Drag and Drop Sortable JavaScript.
++ Media Cloud
+    Automatically upload media to Amazon S3 and integrate with Imgix, a real-time image processing CDN. Boosts site performance and simplifies workflows. I use Digital Ocean Spaces along with KeyCdn for image delivery and this plugin works great.
 
 ## TO GET GOING
 

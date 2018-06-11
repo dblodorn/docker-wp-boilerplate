@@ -16,13 +16,23 @@ $breakpoint-medium: 490px
 $breakpoint-large: 1280px
 
 // COLORS
-$black: #000000
+$black: #3c3c3c
 $white: #ffffff
+$lt-grey: lighten($black, 65%)
+$grey: lighten($black, 35%)
+$med-grey: darken($lt-grey, 25%)
+$dk-grey: lighten($black, 10%)
+$transparent: transparent
+$overlay: rgba(255,255,255,.8)
 
 $border: 1px solid $black
 
+// Z index
+$header-z: 100
+
 // Measurements
 $max-width: 96rem
+$mega-max-width: 1400px
 $hundred: 100%
 $max-line-length: 55rem
 
@@ -43,3 +53,5 @@ $h3-size: 2.5rem
 $h4-size: 2rem
 $h5-size: 1.5rem
 $p-size: 1.25rem
+
+$big-tracking: 2px

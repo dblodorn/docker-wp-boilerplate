@@ -1,0 +1,109 @@
+//-------------------------------------------------------------------
+// NAVIGATION UTILITY - HAMBURGER ICON
+//-------------------------------------------------------------------
+
+$transition-speed: 0
+
+#trigger-overlay
+  background-color: rgba(0, 0, 0, 0)
+
+// Open Button
+.menu-button
+  position: relative
+  z-index: $header-z + 100
+  display: none
+  justify-content: space-between
+  width: 4rem
+  height: 4rem
+  flex-wrap: wrap
+  +mobile-nav
+    display: flex
+
+.menu-button-bg
+  width: calc(100vw - 15rem)
+  height: calc(7rem - 1px)
+  position: absolute
+  top: 0
+  right: 0
+  background-color: $black
+  z-index: $header-z + 99
+
+// TOGGLE SWITCH
+.cmn-toggle-switch
+  font-size: 0
+  position: relative
+  display: block
+  overflow: hidden
+  width: 4rem
+  height: 4rem
+  margin: 0
+  padding: 0
+  cursor: pointer
+  transition: background $transition-speed
+  text-indent: -9999px
+  border: none
+  border-radius: none
+  box-shadow: none
+  appearance: none
+
+.cmn-toggle-switch:focus
+  outline: none
+
+.cmn-toggle-switch span
+  position: absolute
+  top: 19px
+  right: 4px
+  left: 4px
+  display: block
+  height: 2px
+  background: $black
+
+.cmn-toggle-switch span::before,
+.cmn-toggle-switch span::after
+  position: absolute
+  left: 0
+  display: block
+  width: 100%
+  height: 2px
+  content: ''
+  background-color: $black
+
+.cmn-toggle-switch span::before
+  top: -9px
+
+.cmn-toggle-switch span::after
+  bottom: -9px
+
+// HTX
+.cmn-toggle-switch__htx
+  background-color: $black
+
+.cmn-toggle-switch__htx span
+  transition: background 0s $transition-speed
+
+.cmn-toggle-switch__htx span::before,
+.cmn-toggle-switch__htx span::after
+  transition-delay: $transition-speed, 0s
+  transition-duration: $transition-speed, $transition-speed
+
+.cmn-toggle-switch__htx span::before
+  transition-property: top, transform
+
+.cmn-toggle-switch__htx span::after
+  transition-property: bottom, transform
+
+.open
+  .cmn-toggle-switch__htx span
+    background: none
+
+  .cmn-toggle-switch__htx span::before
+    top: 0
+    transform: rotate(45deg)
+
+  .cmn-toggle-switch__htx span::after
+    bottom: 0
+    transform: rotate(-45deg)
+
+  .cmn-toggle-switch__htx span::before,
+  .cmn-toggle-switch__htx span::after
+    transition-delay: 0s, $transition-speed

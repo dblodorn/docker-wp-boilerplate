@@ -18,10 +18,15 @@ services:
       DB_PREFIX: wp_
       PLUGINS: >-
         [local]advanced-custom-fields-pro,
+        [local]wp-migrate-db-pro,
         [local]acf-theme-code-pro,
-        [local]wp-migrate-db-pro
+        [local]enhanced-media-library-pro,
+        ilab-media-tools,
+        enable-media-replace,
+        intuitive-custom-post-order,
+        duplicate-post
       THEMES: >-
-        [local]rochefort
+        [local]docker-wp-boilerplate
       SEARCH_REPLACE:
         yoursite.com,
         localhost:8080

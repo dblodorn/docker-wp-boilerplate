@@ -1,0 +1,131 @@
+header
+  padding: 0 4rem
+  position: fixed
+  display: block
+  top: 0
+  left: 0
+  width: $hundred
+  z-index: $header-z
+  height: $header-height
+  +large
+    padding: 0 2rem
+  +mobile-nav
+    height: 6.5rem
+
+a#logo
+  +FontDisplay($weight : 'bold')
+  color: $black
+  text-transform: uppercase
+  letter-spacing: $big-tracking
+  display: block
+  height: 2.75rem
+  line-height: 1
+  text-decoration: none
+  font-size: 3.5rem
+  z-index: $header-z
+  margin-left: -2px
+  &:after
+    border: 0!important
+  +mobile-nav
+    font-size: 2.5rem
+    padding-top: .6rem
+
+.inner-header
+  width: $hundred
+  height: $hundred
+  +flex-row
+  justify-content: space-between
+  align-items: center
+  position: relative
+  margin: auto
+  &__burger-wrapper
+    display: none
+    +mobile-nav
+      display: block
+      height: $header-height
+      background-color: $transparent
+      width: 4rem
+      height: 4rem
+      position: fixed
+      right: 1.5rem
+      top: 1.5rem
+      z-index: $header-z
+
+.header-menu
+  &__wrapper
+    +mobile-nav
+      display: none
+    a
+      +FontDisplay($weight : 'medium')
+      text-transform: uppercase
+      text-decoration: none
+      color: $grey
+      letter-spacing: $big-tracking
+      font-size: 2rem
+      +mobile-nav
+        font-size: 2.5rem
+  &__ul
+    margin-top: 0
+    +flex-row
+    margin-top: -4px
+    +responsive-below(1110px)
+      margin-top: 8px
+    +mobile-nav
+      +flex-column
+      margin-top: -1px
+    li
+      margin-right: 2rem
+      &:last-child
+        margin-right: 0
+      &.current-menu-item
+        pointer-events: none
+        a:after
+          opacity: 1
+          +fade-in($delay : 150ms, $speed : 100ms)
+      +mobile-nav
+        margin-right: 0
+        margin-bottom: 2rem
+
+header.open
+  .header-menu__wrapper
+    width: 100vw
+    height: 100vh
+    display: flex
+    background-color: $white
+    position: fixed
+    top: 0
+    left: 0
+    +mobile-nav
+      align-items: flex-start
+      justify-content: flex-start
+      padding-left: 2rem
+      padding-top: 10rem
+
+// FOOTER
+body.page-template-template-home
+  footer
+    display: none
+
+footer
+  padding: 0 4rem
+  display: block
+  width: $hundred
+  z-index: $header-z
+  height: 6rem
+  +large
+    padding: 0 2rem
+  +mobile-nav
+    height: 10rem
+
+.inner-footer
+  +flex-row
+  align-items: flex-start
+  justify-content: space-between
+  width: $hundred
+  height: $hundred
+  a
+    +FontDisplay($weight : 'bold')
+    flex-grow: 0
+    color: $grey
+    text-transform: uppercase
+    font-size: $h5-size

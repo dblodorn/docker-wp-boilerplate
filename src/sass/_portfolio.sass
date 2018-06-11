@@ -1,0 +1,141 @@
+.portfolio
+  &__grid
+    +flex-row
+    flex-wrap: wrap
+    margin: 0 auto
+    width: 100%
+    position: relative
+    +medium
+      flex-direction: column
+      flex-wrap: unset
+  &__item
+    position: relative
+    display: block
+    min-height: 20rem
+    a:hover
+      opacity: .8
+    &--title
+      opacity: 0
+      transition: opacity 750ms ease 150ms
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      z-index: 10
+      display: flex
+      align-items: center
+      justify-content: center
+      background-color: $overlay
+      padding: 3rem
+      text-align: center
+      p
+        font-size: 8vmin
+        text-transform: uppercase
+        overflow-wrap: break-word
+        word-wrap: break-word
+        hyphens: auto
+  &__image
+    &--wrapper
+      transition: opacity 350ms ease
+      opacity: 1
+      width: $hundred
+      overflow-y: visible
+      height: 0
+      position: relative
+      padding-bottom: 85%
+      display: block
+      &:after
+        border: 0!important
+      &.hide-spinner
+        .spinner
+          opacity: 0
+        .portfolio__item--title
+          opacity: 1
+      img
+        +absolute-center
+        height: 100%
+        opacity: 0
+        transition: opacity 750ms ease 150ms
+  &__detail--image
+    display: none
+
+img:not([src]):not([srcset])
+	visibility: hidden
+
+.spinner
+  +absolute-center
+  width: 3.5rem
+  height: 3.5rem
+  opacity: .35
+  pointer-events: none
+  transition: opacity 250ms ease
+  svg
+    width: 100%
+    height: 100%
+
+.lazy
+  &--loaded
+    opacity: 1!important
+
+.portfolio__image--wrapper
+  &.contain
+    img
+      object-fit: contain
+      width: auto
+
+.portfolio__image--wrapper
+  &.cover
+    img
+      object-fit: cover
+      width: 100%
+
+.col_one_wide
+  padding: 0 2rem
+  max-width: 1300px
+  .portfolio__item
+    padding: 0 0 6rem
+    width: $hundred
+    +medium
+      padding: 0 0 2rem
+  .portfolio__image--wrapper
+    padding-bottom: 65%
+
+.col_one
+  padding: 0 2rem
+  max-width: 75rem
+  .portfolio__item
+    padding: 0 0 4rem
+    width: $hundred
+    +medium
+      padding: 0 0 2rem
+  .portfolio__image--wrapper
+    padding-bottom: 65%
+
+.col_two
+  padding: 0 1rem
+  .portfolio__item
+    padding: 0 1rem 2rem
+    width: $hundred / 2
+    +medium
+      width: $hundred
+
+.col_three
+  padding: 0 1rem
+  .portfolio__item
+    padding: 0 1rem 2rem
+    width: $hundred / 3
+    +responsive-below(1020px)
+      width: $hundred / 2
+    +medium
+      width: $hundred
+
+.col_four
+  padding: 0 1rem
+  .portfolio__item
+    padding: 0 1rem 2rem
+    width: $hundred / 4
+    +responsive-below(1020px)
+      width: $hundred / 2
+    +medium
+      width: $hundred

@@ -21,8 +21,7 @@ add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
 add_action( 'admin_menu', 'my_remove_menu_pages' );
 
 function my_remove_menu_pages() {
-  remove_menu_page('edit-comments.php'); // No Comments
-  // If you want to remove Posts: remove_menu_page('edit.php');
+  remove_menu_page('edit-comments.php');
 }
 
 function my_theme_setup() {
@@ -65,6 +64,8 @@ add_filter('upload_mimes', 'cc_mime_types');
 /* Image Functions
 /*-----------------------------------------------------------------------------------*/
 
+add_theme_support( 'post-thumbnails' );
+
 // apply categories to attachments
 function wptp_add_categories_to_attachments() {
   register_taxonomy_for_object_type( 'category', 'attachment' );
@@ -87,6 +88,16 @@ update_option( 'medium_size_h', 660 );
 
 update_option( 'large_size_w', 1280 );
 update_option( 'large_size_h', 1280 );
+
+/*-----------------------------------------------------------------------------------*/
+/* ADD SCRIPTS
+/*-----------------------------------------------------------------------------------*/
+
+function add_scripts() {
+  wp_enqueue_style( 'style', get_template_directory_uri().'/assets/css/style.css' );
+  wp_deregister_script('jquery');
+}
+add_action( 'wp_enqueue_scripts', 'add_scripts' );
 
 /*-----------------------------------------------------------------------------------*/
 /* REMOVE EMOJI SHIT
@@ -163,12 +174,6 @@ class CSS_Menu_Walker extends Walker {
     $output .= "</li>\n";
   }
 }
-
-/*-----------------------------------------------------------------------------------*/
-/* POST ORDER
-/*-----------------------------------------------------------------------------------*/
-
-
 
 /*-----------------------------------------------------------------------------------*/
 /* SHORTEN EXCERPT LENGTH
